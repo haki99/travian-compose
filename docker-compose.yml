@@ -3,9 +3,9 @@ services:
       build: travian
       container_name: travian
       ports:
-         - "80:80"
+         - "83:80"
       volumes:
-         - ./appdata/TravianZ:/var/www/html
+         - /home/hofi/Configs/TravianZ/appdata/TravianZ:/var/www/html
 
    mysql:
       image: "mysql:8.0.40-debian"
@@ -16,4 +16,4 @@ services:
          - MYSQL_USER=travian
          - MYSQL_PASSWORD=travian
       volumes:
-         - ./appdata/mysql/data:/var/lib/mysql
+         - /home/hofi/Configs/TravianZ/appdata/mysql/data:/var/lib/mysql
