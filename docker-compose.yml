@@ -6,7 +6,7 @@ services:
          - "83:80"
       volumes:
          - /home/hofi/Configs/TravianZ/appdata/TravianZ:/var/www/html
-
+      restart: unless-stopped
    mysql:
       image: "mysql:8.0.40-debian"
       container_name: travian-sql
@@ -17,3 +17,4 @@ services:
          - MYSQL_PASSWORD=travian
       volumes:
          - /home/hofi/Configs/TravianZ/appdata/mysql/data:/var/lib/mysql
+      restart: unless-stopped
