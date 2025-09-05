@@ -5,7 +5,7 @@ services:
       ports:
          - "83:80"
       volumes:
-         - /home/hofi/Configs/TravianZ/appdata/TravianZ:/var/www/html
+         - /media/raid/TravianZ/appdata/TravianZ:/var/www/html
       restart: unless-stopped
    mysql:
       image: "mysql:8.0.40-debian"
@@ -16,5 +16,5 @@ services:
          - MYSQL_USER=travian
          - MYSQL_PASSWORD=travian
       volumes:
-         - /home/hofi/Configs/TravianZ/appdata/mysql/data:/var/lib/mysql
+         - /media/raid/TravianZ/appdata/mysql/data:/var/lib/mysql
       restart: unless-stopped
