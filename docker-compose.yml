@@ -3,9 +3,9 @@ services:
       build: travian
       container_name: travian
       ports:
-         - "${PORT}:80"
+         - "83:80"
       volumes:
-         - ${TRAVIAN_LOCATION}:/var/www/html
+         - /home/hofi/Configs/TravianZ/appdata/TravianZ:/var/www/html
       restart: unless-stopped
    mysql:
       image: "mysql:8.0.40-debian"
@@ -16,5 +16,5 @@ services:
          - MYSQL_USER=travian
          - MYSQL_PASSWORD=travian
       volumes:
-         - ${DB_LOCATION}:/var/lib/mysql
+         - /home/hofi/Configs/TravianZ/appdata/mysql/data:/var/lib/mysql
       restart: unless-stopped
